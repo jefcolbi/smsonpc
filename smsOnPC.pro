@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,8 +13,35 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    contactitem.cpp \
+    message.cpp \
+    discussion.cpp \
+    emojidialog.cpp \
+    contact.cpp \
+    database.cpp \
+    modemdriver.cpp \
+    emojiform.cpp \
+    messagewidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    contactitem.h \
+    message.h \
+    discussion.h \
+    emojidialog.h \
+    abstractmodemdriver.h \
+    contact.h \
+    database.h \
+    modemdriver.h \
+    emojiform.h \
+    messagewidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    emojidialog.ui \
+    emojiform.ui \
+    messagewidget.ui
+
+RESOURCES += \
+    ressources.qrc
+
+CONFIG += resources_big

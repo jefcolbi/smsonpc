@@ -2,6 +2,8 @@
 #define MESSAGEWIDGET_H
 
 #include <QWidget>
+#include <QTime>
+#include "message.h"
 
 namespace Ui {
 class MessageWidget;
@@ -12,8 +14,10 @@ class MessageWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit MessageWidget(QWidget *parent = 0);
+    explicit MessageWidget(Message msg,QWidget *parent = 0);
     ~MessageWidget();
+
+    QSize sizeHint() const{return QSize(300,50);}
 
 private:
     Ui::MessageWidget *ui;
